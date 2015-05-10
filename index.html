@@ -20,7 +20,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
- <!-- jQuery -->
+ 		<!-- jQuery -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -39,6 +39,9 @@
 	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 	<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
 
+	<!-- Bootstrap Carousel CSS -->
+		<link rel="stylesheet" href="css/half-slider.css" type="text/css" media="screen" />
+
 </head>
 <body>
 
@@ -52,6 +55,7 @@
     </div>
 </div>
 
+					<!-- Script for theCatApi (if we decide to use it!) -->
 <script>
 $.ajax({
   url: "http://thecatapi.com/api/images/get?format=xml&results_per_page=20",
@@ -61,21 +65,106 @@ $.ajax({
 });
 </script>
 
+					<!-- Script for fancybox (if we decide to use it!) -->
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".fancybox").fancybox();
 	});
 </script>
 
-<a class="fancybox" rel="group" href="big_image_1.jpg"><img src="small_image_1.jpg" alt="" /></a>
-<a class="fancybox" rel="group" href="big_image_2.jpg"><img src="small_image_2.jpg" alt="" /></a>
+
+		<!-- Classes for fancybox image depictions (if we decide to use it!) -->
+<!-- <a class="fancybox" rel="group" href="big_image_1.jpg"><img src="http://www.thetimes.co.uk/tto/multimedia/archive/00342/114240651_cat_342943c.jpg" alt="" /></a>
+<a class="fancybox" rel="group" href="big_image_2.jpg"><img src="http://www.vetprofessionals.com/catprofessional/images/home-cat.jpg" alt="" /></a> -->
+
+						<!-- Trying out the Bootstrap Carousel -->
+
+    <!-- Half Page Image Background Carousel Header -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+            <li data-target="#myCarousel" data-slide-to="8"></li>
+            <li data-target="#myCarousel" data-slide-to="9"></li>
+            <li data-target="#myCarousel" data-slide-to="10"></li>
+            <li data-target="#myCarousel" data-slide-to="11"></li>
+            <li data-target="#myCarousel" data-slide-to="12"></li>
+            <li data-target="#myCarousel" data-slide-to="13"></li>
+            <li data-target="#myCarousel" data-slide-to="14"></li>
+            <li data-target="#myCarousel" data-slide-to="15"></li>
+            <li data-target="#myCarousel" data-slide-to="16"></li>
+            <li data-target="#myCarousel" data-slide-to="17"></li>
+            <li data-target="#myCarousel" data-slide-to="18"></li>
+            <li data-target="#myCarousel" data-slide-to="19"></li>
+            <li data-target="#myCarousel" data-slide-to="20"></li>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+             <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Four');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 4</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+
+
 
 
 
 <!-- Hey Shannon! Please feel free to enter the description stuff between here and the footer tag below :) -->
 
+
+
+
+
 <footer>
 </footer>
+
+
+    <!-- Script to Activate the Bootstrap Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
 
 </body>
 
