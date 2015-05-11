@@ -17,6 +17,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
+    <!-- Custom CSS for Kitten List -->
+    <link href="css/adoptionlist.css" rel="stylesheet">
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -163,13 +166,21 @@ $.ajax({
             <span class="icon-next"></span>
         </a>
 
+<div class="adoptionlist">
 
+<h2>Meet the Kittens!</h2>
+<dl id="adoptionList"></dl>
+<!-- <img src="img/Kitten1.jpg" height=100 width=120>" -->
+<!--   <dt></dt>
+  <dd>Age: 2 months
+  <dd>Size: S
+  <dd>Sex: F
+  <dd>Breed: Domestic Short Hair</dd> -->
+  <form action="http://google.com">
+    <input type="submit" value="Learn more about Esther">
+</form>
 
-
-
-<!-- Hey Shannon! Please feel free to enter the description stuff between here and the footer tag below :) -->
-
-
+</div>
 
 
 
@@ -177,11 +188,41 @@ $.ajax({
 </footer>
 
 
+
     <!-- Script to Activate the Bootstrap Carousel -->
     <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
     })
+    </script>
+
+
+    <!-- Script for the Kitten List -->
+
+    <script>
+    $(document).ready(function() {
+      displayAdoptionList();
+    });
+
+    function displayAdoptionList() {
+      var list= initAdoptionList();
+      var dl= $("#adoptionList");
+      //console.log(dl);
+      dl.html("");
+      $.each(list, function(index, entry){
+              dl.append("<center><dt>" + entry.name + "</dt><dd>" + entry.age +
+              "</dd><dd>" + entry.sex +"</dd><dd>" + entry.breed +"</dd></center>");
+            });
+    };
+
+    function initAdoptionList(){
+        var defaultAdoptionList = [
+            {name: "Esther", age: "2 months", sex:"F", breed:"Domestic Short Hair"}
+           ,{name: "Garfield", age: "3 weeks", sex:"M", breed:"Orange"}
+           ,{name: "Lilly", age: "4 months", sex:"F", breed:"Persian"}
+          ];
+          return(defaultAdoptionList);
+      };
     </script>
 
 </body>
