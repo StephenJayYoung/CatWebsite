@@ -181,7 +181,7 @@ function loadTimetable() {
   $.getJSON('data/data.json' )
   .done( function(data) {
     times = data;
-  }).fail( funtion() {
+  }).fail( function() {
     $('#event').html('Sorry! could  not load resource');
   });
 }
@@ -189,8 +189,29 @@ function loadTimetable() {
 loadTimetable();
 </script>
 
+<!-- JS for running the table -->
+<script>
+$('#content').on('click','#event a', function(e) {
 
+  e.preventDefault();
+  var loc = this.id.toUpperCase();
 
+  var newContent = '';
+  for (var i= 0; i<times[loc].length;i++) {
+    newContent+='<li><span class="time">' + times[loc][i].time + '</span>';
+
+  }
+
+  $('#sessions').html('<ul>' + newContent + '</ul>');
+
+  $('#event a.current').removeClass('current');
+  $(this).addClass('current');
+
+  $('#details').text('');
+
+});
+
+</script>
 
 <footer>
 </footer>
@@ -208,29 +229,29 @@ loadTimetable();
     <!-- Script for the Kitten List -->
 
     <script>
-    $(document).ready(function() {
-      displayAdoptionList();
-    });
+    // $(document).ready(function() {
+    //   displayAdoptionList();
+    // });
 
-    function displayAdoptionList() {
-      var list= initAdoptionList();
-      var dl= $("#adoptionList");
-      //console.log(dl);
-      dl.html("");
-      $.each(list, function(index, entry){
-              dl.append("<center><dt>" + entry.name + "</dt><dd>" + entry.age +
-              "</dd><dd>" + entry.sex +"</dd><dd>" + entry.breed +"</dd></center>");
-            });
-    };
+    // function displayAdoptionList() {
+    //   var list= initAdoptionList();
+    //   var dl= $("#adoptionList");
+    //   //console.log(dl);
+    //   dl.html("");
+    //   $.each(list, function(index, entry){
+    //           dl.append("<center><dt>" + entry.name + "</dt><dd>" + entry.age +
+    //           "</dd><dd>" + entry.sex +"</dd><dd>" + entry.breed +"</dd></center>");
+    //         });
+    // };
 
-    function initAdoptionList(){
-        var defaultAdoptionList = [
-            {name: "Esther", age: "2 months", sex:"F", breed:"Domestic Short Hair"}
-           ,{name: "Garfield", age: "3 weeks", sex:"M", breed:"Orange"}
-           ,{name: "Lilly", age: "4 months", sex:"F", breed:"Persian"}
-          ];
-          return(defaultAdoptionList);
-      };
+    // function initAdoptionList(){
+    //     var defaultAdoptionList = [
+    //         {name: "Esther", age: "2 months", sex:"F", breed:"Domestic Short Hair"}
+    //        ,{name: "Garfield", age: "3 weeks", sex:"M", breed:"Orange"}
+    //        ,{name: "Lilly", age: "4 months", sex:"F", breed:"Persian"}
+    //       ];
+    //       return(defaultAdoptionList);
+    //   };
     </script>
 
 </body>
