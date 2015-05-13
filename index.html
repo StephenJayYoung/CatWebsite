@@ -162,12 +162,25 @@
 
 </div>
 
+<!-- function that runs the AJAX request -->
+<script>
+var times;
+$.ajax({
+  beforeSend: function(xhr) {
+    if (xhr.overrideMimeType) {
+      xhr.overrideMimeType("application/json");
+    }
+  }
+});
+</script>
+
+
 <!-- function that collects data from JSON file -->
 <script>
-function.loadTimetable() {
-  $.getJSON('data/example.json')
+function loadTimetable() {
+  $.getJSON('data/data.json' )
   .done( function(data) {
-    times=data;
+    times = data;
   }).fail( funtion() {
     $('#event').html('Sorry! could  not load resource');
   });
