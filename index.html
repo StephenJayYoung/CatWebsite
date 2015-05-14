@@ -168,7 +168,7 @@
 
 <!-- function that runs the AJAX request -->
 <script>
-var times;
+var names;
 $.ajax({
   beforeSend: function(xhr) {
     if (xhr.overrideMimeType) {
@@ -181,16 +181,16 @@ $.ajax({
 
 <!-- function that collects data from JSON file -->
 <script>
-function loadTimetable() {
+function loadDescriptionTable() {
   $.getJSON('data/data.json' )
   .done( function(data) {
-    times = data;
+    names = data;
   }).fail( function() {
     $('#event').html('Sorry! could  not load resource');
   });
 }
 
-loadTimetable();
+loadDescriptionTable();
 </script>
 
 <!-- JS for running the description table -->
@@ -201,11 +201,11 @@ $('#content').on('click','#event a', function(e) {
   var loc = this.id.toUpperCase();
 
   var newContent = '';
-  for (var i= 0; i<times[loc].length;i++) {
-    newContent+='<li><span class="time">' + times[loc][i].time + '</span>';
+  for (var i= 0; i<names[loc].length;i++) {
+    newContent+='<li><span class="time">' + names[loc][i].time + '</span>';
     newContent += '<a href="descriptions.html#';
-    newContent += times[loc][i].age.replace(/ /g, '-') + '">';
-    newContent += times[loc][i].age + '</a></li>';
+    newContent += names[loc][i].age.replace(/ /g, '-') + '">';
+    newContent += names[loc][i].age + '</a></li>';
 
   }
 console.log(loc);
