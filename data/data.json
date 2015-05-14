@@ -1,16 +1,16 @@
 {
-"CA": [
+"CATS": [
 {
-	"time": "09.00",
-	"title":"Intro to 3d Modeling"
+	"name": "Esther",
+	"age":"6"
 },
 {
-"time": "10.00",
-"title": "Circuit Hacking"
+"name": "Roger",
+"age": "Circuit Hacking"
 },
 {
-"time": "11:30",
-"title": "Arduino Antics"
+"name": "AnnaBanna",
+"age": "Arduino Antics"
 
 }
 
