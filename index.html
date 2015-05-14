@@ -144,76 +144,76 @@
             <span class="icon-next"></span>
         </a>
 
-<!-- <div class="adoptionlist">
+<div class="adoptionlist">
 
 <h2>Meet the Kittens!</h2>
-<dl id="adoptionList"></dl> -->
-<!-- <img src="img/Kitten1.jpg" height=100 width=120>" -->
-<!--   <dt></dt>
+<dl id="adoptionList"></dl>
+<img src="img/Kitten1.jpg" height=100 width=120>"
+  <dt></dt>
   <dd>Age: 2 months
   <dd>Size: S
   <dd>Sex: F
-  <dd>Breed: Domestic Short Hair</dd> -->
-<!--   <div class="text-center">
+  <dd>Breed: Domestic Short Hair</dd>
+  <div class="text-center">
   <form action="http://google.com">
     <input type="submit" value="Learn more about Esther">
   </form>
-  </div> -->
+  </div>
 
 </div>
 
 <!-- function that runs the AJAX request -->
 <script>
-var times;
-$.ajax({
-  beforeSend: function(xhr) {
-    if (xhr.overrideMimeType) {
-      xhr.overrideMimeType("application/json");
-    }
-  }
-});
+// var times;
+// $.ajax({
+//   beforeSend: function(xhr) {
+//     if (xhr.overrideMimeType) {
+//       xhr.overrideMimeType("application/json");
+//     }
+//   }
+// });
 </script>
 
 
 <!-- function that collects data from JSON file -->
 <script>
-function loadTimetable() {
-  $.getJSON('data/data.json' )
-  .done( function(data) {
-    times = data;
-  }).fail( function() {
-    $('#event').html('Sorry! could  not load resource');
-  });
-}
+// function loadTimetable() {
+//   $.getJSON('data/data.json' )
+//   .done( function(data) {
+//     times = data;
+//   }).fail( function() {
+//     $('#event').html('Sorry! could  not load resource');
+//   });
+// }
 
-loadTimetable();
+// loadTimetable();
 </script>
 
 <!-- JS for running the table -->
 <script>
-$('#content').on('click','#event a', function(e) {
+// $('#content').on('click','#event a', function(e) {
 
-  e.preventDefault();
-  var loc = this.id.toUpperCase();
+//   e.preventDefault();
+//   var loc = this.id.toUpperCase();
 
-  var newContent = '';
-  for (var i= 0; i<times[loc].length;i++) {
-    newContent+='<li><span class="time">' + times[loc][i].time + '</span>';
-    newContent += '<a href="descriptions.html#';
-    newContent += times[loc][i].title.replace(/ /g, '-') + '">';
-    newContent += times[loc][i].title + '</a></li>';
+//   var newContent = '';
+//   for (var i= 0; i<times[loc].length;i++) {
+//     newContent+='<li><span class="time">' + times[loc][i].time + '</span>';
+//     newContent += '<a href="descriptions.html#';
+//     newContent += times[loc][i].title.replace(/ /g, '-') + '">';
+//     newContent += times[loc][i].title + '</a></li>';
 
-  }
-console.log(loc);
+//   }
+// console.log(loc);
 
-  $('#sessions').html('<ul>' + newContent + '</ul>');
+//   $('#sessions').html('<ul>' + newContent + '</ul>');
 
-  $('#event a.current').removeClass('current');
-  $(this).addClass('current');
+//   $('#event a.current').removeClass('current');
+//   $(this).addClass('current');
 
-  $('#details').text('');
+//   $('#details').text('');
 
-});
+// });
 
 </script>
 
