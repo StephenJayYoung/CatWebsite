@@ -146,7 +146,7 @@
 
 <div class="adoptionlist">
 
-<h2>Meet the Kittens!</h2>
+<!-- <h2>Meet the Kittens!</h2>
 <dl id="adoptionList"></dl>
 <img src="img/Kitten1.jpg" height=100 width=120>"
   <dt></dt>
@@ -158,7 +158,7 @@
   <form action="http://google.com">
     <input type="submit" value="Learn more about Esther">
   </form>
-  </div>
+  </div> -->
 
 </div>
 
@@ -184,17 +184,19 @@
     <script>
     $(document).ready(function() {
       displayAdoptionList();
+      console.log('ready!');
     });
 
     function displayAdoptionList() {
-      var list= initAdoptionList();
-      var dl= $("#adoptionList");
+      var list = initAdoptionList();
+      var dl = $("#adoptionList");
       //console.log(dl);
       dl.html("");
       $.each(list, function(index, entry){
-              dl.append("<center><dt>" + entry.name + "</dt><dd>" + entry.age +
-              "</dd><dd>" + entry.sex +"</dd><dd>" + entry.breed +"</dd></center>");
+              dl.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.imageUrl+"' alt=''>"+kitten.name+"<br>Size: "+kitten.Age+"<br>Birth date: "+kitten.breed+"</div></div>");
             });
+
+
     };
 
     function initAdoptionList(){
@@ -205,6 +207,7 @@
           ];
           return(defaultAdoptionList);
       };
+      console.log(initAdoptionList);
     </script>
 
 </body>
