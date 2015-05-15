@@ -24,7 +24,7 @@
     <script src="js/jquery.js"></script>
 
  		<!-- jQuery -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    // <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -189,11 +189,11 @@
 
     function displayAdoptionList() {
       var list = initAdoptionList();
-      var dl = $("#adoptionList");
-      //console.log(dl);
-      dl.html("");
-      $.each(defaultAdoptionList.kittens, function(index, entry){
-              dl.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.img+"' alt=''>"+kitten.name+"<br>Size: "+kitten.Age+"<br>Birth date: "+kitten.breed+"</div></div>");
+      var $adoptionList = $("#adoptionList");
+      //console.log($adoptionList);
+      $adoptionList.html(" ");
+      $.each(list.defaultAdoptionList, function(index, kitten){
+              $adoptionList.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.img+"' alt=''>"+kitten.name+"<br>Size: "+kitten.age+"<br>Birth date: "+kitten.breed+"</div></div>");
             });
 
 
@@ -201,10 +201,10 @@
 
     function initAdoptionList(){
         var defaultAdoptionList = {
-        "kittens":[
-            {name: "Esther", img: "img/Kitten1.jpg", age: "2 months", sex:"F", breed:"Domestic Short Hair"},
-           ,{name: "Garfield", age: "3 weeks", sex:"M", breed:"Orange"},
-           ,{name: "Lilly", age: "4 months", sex:"F", breed:"Persian"}
+        "kitten":[
+            {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair"},
+           ,{"name": "Garfield", "Age": "3 weeks", "sex":"M", "Breed":"Orange"},
+           ,{"name": "Lilly", "age": "4 months", "sex":"F", "Breed":"Persian"}
           ]
         }
           return(defaultAdoptionList);
