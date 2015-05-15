@@ -212,14 +212,14 @@ $.ajax({
       //console.log(dl);
       dl.html("");
       $.each(list, function(index, entry){
-              dl.append("<center><dt>" + entry.name + "</dt><dd>" + entry.age +
+              dl.append("<center><dt>" + entry.name + "</dt><dd><img href= '" + entry.img + "'/></dd><dd>" + entry.age +
               "</dd><dd>" + entry.sex +"</dd><dd>" + entry.breed +"</dd></center>");
             });
     };
 
     function initAdoptionList(){
         var defaultAdoptionList = [
-            {name: "Esther", age: "2 months", sex:"F", breed:"Domestic Short Hair"}
+            {name: "Esther", img: "img/Kitten1.jpg", age: "2 months", sex:"F", breed:"Domestic Short Hair"}
            ,{name: "Garfield", age: "3 weeks", sex:"M", breed:"Orange"}
            ,{name: "Lilly", age: "4 months", sex:"F", breed:"Persian"}
           ];
