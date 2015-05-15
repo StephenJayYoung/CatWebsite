@@ -144,7 +144,8 @@
             <span class="icon-next"></span>
         </a>
 
-<div class="adoptionlist">
+       <!-- Kitten List -->
+          <div id="kitten-list" class="col-md-12">
 
 <!-- <h2>Meet the Kittens!</h2>
 <dl id="adoptionList"></dl>
@@ -183,33 +184,33 @@
 
     <script>
     $(document).ready(function() {
-      displayAdoptionList();
+      displayAnimals();
       console.log('ready!');
     });
 
-    function displayAdoptionList() {
-      var list = initAdoptionList();
-      var $adoptionList = $("#adoptionList");
+    function displayAnimals() {
+      var animals = initAnimals();
+      var $kittenList = $("#kitten-list");
       //console.log($adoptionList);
-      $adoptionList.html(" ");
-      $.each(list.defaultAdoptionList, function(index, kitten){
-              $adoptionList.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.img+"' alt=''>"+kitten.name+"<br>Size: "+kitten.age+"<br>Birth date: "+kitten.breed+"</div></div>");
+      $kittenList.html(" ");
+      $.each(animals.kittens, function(index, kitten){
+              $kittenList.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div>");
             });
 
 
     };
 
-    function initAdoptionList(){
-        var defaultAdoptionList = {
-        "kitten":[
-            {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair"},
-           ,{"name": "Garfield", "Age": "3 weeks", "sex":"M", "Breed":"Orange"},
+    function initAnimals(){
+        var animals = {
+        "kittens":[
+            {"name": "Esther", "age": "2 months", "sex":"F", "Breed":"Domestic Short Hair"}
+           ,{"name": "Garfield", "Age": "3 weeks", "sex":"M", "Breed":"Orange"}
            ,{"name": "Lilly", "age": "4 months", "sex":"F", "Breed":"Persian"}
           ]
-        }
-          return(defaultAdoptionList);
-      };
-      console.log(initAdoptionList);
+        };
+          return(animals);
+      }
+      console.log(initAnimals);
     </script>
 
 </body>
