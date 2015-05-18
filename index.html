@@ -167,7 +167,10 @@
         </a>
 
        <!-- Kitten List -->
+       <div class= "box">
           <div id="kitten-list" class="col-md-12">
+          </div>   
+       </div>
 
 <!-- <h2>Meet the Kittens!</h2>
 <dl id="adoptionList"></dl>
@@ -183,7 +186,7 @@
   </form>
   </div> -->
 
-</div>
+
 
 
 
@@ -215,7 +218,7 @@
       var $kittenList = $("#kitten-list");
       $kittenList.html(" ");
       $.each(animals.kittens, function(index, kitten){
-              $kittenList.append("<div class='panel panel-default'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.imageUrl+"' alt='' height=100 width=100>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div>");
+              $kittenList.append("<div class='box'><div class='panel-heading'>"+kitten.name+"</div><div class='panel-body'><img class='thumbnail' src='"+kitten.imageUrl+"' alt='' height=100 width=100>"+kitten.age+"<br>Size: "+kitten.sex+"<br>Breed: "+kitten.Breed+"</div></div>");
 
             });
 
