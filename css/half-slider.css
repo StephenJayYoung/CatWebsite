@@ -111,8 +111,8 @@ footer {
     margin-right: auto;
     width: 70%;
     background-color: #b0e0e6;
-    vertical-align:middle
-    padding: 30px 15px;
+    vertical-align:middle;
+    padding: 10px 5px;
     background: #fff;
-    background: rgba(0,0,255,0.7);
+    background: rgba(0,0,255,0.95);
 }
